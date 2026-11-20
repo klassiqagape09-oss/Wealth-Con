@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <!-- SheetJS for reading Excel (.xlsx, .xls, .csv) directly in the browser -->
   <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+
   <style>
     :root {
       --bg-obsidian: #080605;
@@ -44,7 +44,6 @@
       padding: 28px 16px 64px;
     }
 
-    /* Ambient Warm Radial Lighting matching the flyer */
     body::before {
       content: "";
       position: fixed;
@@ -69,11 +68,10 @@
       z-index: 0;
     }
 
-    /* Subtle Geometric Background Lines */
     .bg-grid {
       position: fixed;
       inset: 0;
-      background-image: 
+      background-image:
         linear-gradient(135deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px),
         linear-gradient(45deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
       background-size: 64px 64px;
@@ -91,7 +89,6 @@
       align-items: center;
     }
 
-    /* Brand Header */
     .brand-header {
       text-align: center;
       margin-bottom: 22px;
@@ -125,7 +122,6 @@
       text-transform: uppercase;
     }
 
-    /* Flyer Emblem Hero Card */
     .hero-emblem {
       width: 100%;
       background: radial-gradient(circle at 50% 25%, #0c2756 0%, #05132e 65%, #030b1c 100%);
@@ -216,7 +212,6 @@
       font-weight: 500;
     }
 
-    /* Search & Verification Section */
     .search-card {
       width: 100%;
       background: var(--bg-card);
@@ -310,7 +305,6 @@
       background: rgba(255, 215, 0, 0.3);
     }
 
-    /* Status Pill */
     .db-status {
       display: flex;
       align-items: center;
@@ -339,7 +333,6 @@
       box-shadow: 0 0 8px #ef4444;
     }
 
-    /* Results Container */
     .results-area {
       margin-top: 20px;
       display: flex;
@@ -439,7 +432,6 @@
       color: var(--gold-bright);
     }
 
-    /* Event Info Grid (Matches bottom half of flyer) */
     .info-grid {
       width: 100%;
       display: grid;
@@ -520,7 +512,6 @@
       text-decoration: none;
     }
 
-    /* Ticket Tiers Row (Matches Regular / Gold / Diamond cards on flyer) */
     .tickets-section {
       width: 100%;
       margin-bottom: 26px;
@@ -602,7 +593,6 @@
       margin-top: 4px;
     }
 
-    /* Footer */
     .footer-motto {
       text-align: center;
       font-size: 0.78rem;
@@ -613,76 +603,20 @@
       margin-top: 6px;
     }
 
-    /* Subtle Organizer Setup Bar (Optional local file preview / template download) */
-    .organizer-bar {
-      margin-top: 36px;
-      width: 100%;
-      border-top: 1px dashed rgba(255, 215, 0, 0.22);
-      padding-top: 14px;
-      text-align: center;
-    }
-
-    .organizer-toggle {
-      background: transparent;
-      border: none;
-      color: rgba(203, 187, 160, 0.55);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.74rem;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-
-    .organizer-toggle:hover {
-      color: var(--gold-bright);
-    }
-
-    .organizer-panel {
-      display: none;
-      margin-top: 12px;
-      background: rgba(15, 12, 10, 0.92);
-      border: 1px solid rgba(255, 215, 0, 0.25);
-      border-radius: 12px;
-      padding: 14px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .organizer-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .btn-mini {
-      background: rgba(255, 215, 0, 0.14);
-      border: 1px solid var(--gold-bright);
-      color: var(--gold-bright);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .btn-mini:hover {
-      background: var(--gold-bright);
-      color: #000;
-    }
-
     @media (max-width: 640px) {
       .info-grid {
         grid-template-columns: 1fr;
       }
+
       .tickets-grid {
         grid-template-columns: 1fr;
       }
+
       .guest-card {
         flex-direction: column;
         align-items: flex-start;
       }
+
       .footer-motto {
         letter-spacing: 0.18em;
         font-size: 0.7rem;
@@ -690,10 +624,12 @@
     }
   </style>
 </head>
+
 <body>
   <div class="bg-grid"></div>
 
   <main class="container">
+
     <!-- Crest Consult Limited Brand Header -->
     <header class="brand-header">
       <div class="brand-logo-row">
@@ -703,39 +639,52 @@
           <rect x="26" y="21" width="4" height="17" rx="1" fill="#FFFFFF"/>
           <rect x="33" y="27" width="4" height="11" rx="1" fill="#FFD700"/>
         </svg>
+
         <div class="brand-name">
           Crest<br/>Consult<br/>Limited
         </div>
       </div>
+
       <div class="brand-tagline">Wealth | Strategy | Growth</div>
     </header>
 
-    <!-- Main Conference Title Emblem -->
+    <!-- Main Conference Title -->
     <section class="hero-emblem">
       <div class="arc-subtitle">Wealth Acceleration Conference</div>
+
       <h1 class="title-wealth">Wealth</h1>
-      <div class="title-sub">Acceleration<br/>Conference</div>
+
+      <div class="title-sub">
+        Acceleration<br/>Conference
+      </div>
+
       <div class="theme-strip">
         <div class="theme-main">
           <span class="theme-tag">Theme</span>
           <span>From Strategy to Success</span>
         </div>
-        <div class="theme-desc">Proven Systems to Increase Sales, Multiply Income &amp; Build Wealth</div>
+
+        <div class="theme-desc">
+          Proven Systems to Increase Sales, Multiply Income &amp; Build Wealth
+        </div>
       </div>
     </section>
 
     <!-- Guest Verification Search Box -->
     <section class="search-card" aria-label="Guest List Verification">
+
       <div class="search-header">
         <h2>Verify Your Registration</h2>
         <p>Enter your full name or phone number below to check if you are on the guest list.</p>
       </div>
 
       <div class="search-input-wrap">
+
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
+
         <input
           type="text"
           id="searchInput"
@@ -744,7 +693,9 @@
           autocomplete="off"
           disabled
         />
+
         <button type="button" id="clearBtn" class="clear-btn" title="Clear search">✕</button>
+
       </div>
 
       <div class="db-status" id="dbStatus">
@@ -752,73 +703,85 @@
         <span id="statusText">Loading guest list...</span>
       </div>
 
-      <!-- Search Results Appear Here Only When Typing -->
       <div class="results-area" id="resultsArea"></div>
+
     </section>
 
-    <!-- Event Date & Payment Info -->
+    <!-- Event Date & Payment Information -->
     <section class="info-grid">
+
       <div class="info-box">
         <span class="date-pill">Friday &amp; Saturday</span>
-        <div class="date-text">20th &amp; 21st<br/>November<br/>2026</div>
+
+        <div class="date-text">
+          20th &amp; 21st<br/>
+          November<br/>
+          2026
+        </div>
       </div>
 
       <div class="info-box">
+
         <div class="payment-label">Payment Details &gt;&gt;&gt;</div>
+
         <div class="account-num">131 3212 263</div>
+
         <div class="bank-name">ZENITH BANK</div>
+
         <div class="account-holder">Crest Consulting Ltd</div>
+
         <div class="enquiries-box">
           <div class="enquiries-label">Enquiries &amp; Registration</div>
-          <a href="tel:08066828303" class="enquiries-phone">0806 682 8303</a>
+
+          <a href="tel:08066828303" class="enquiries-phone">
+            0806 682 8303
+          </a>
         </div>
+
       </div>
+
     </section>
 
     <!-- Ticket Tiers -->
     <section class="tickets-section">
+
       <div class="tickets-badge-wrap">
         <span class="tickets-badge">Tickets</span>
       </div>
+
       <div class="tickets-grid">
+
         <div class="ticket-card ticket-regular">
           <div class="t-name">Regular Ticket</div>
           <div class="t-price">N50k</div>
           <div class="t-date">20th November</div>
         </div>
+
         <div class="ticket-card ticket-gold">
           <div class="t-name">Gold Ticket</div>
           <div class="t-price">N150k</div>
           <div class="t-date">21st November</div>
         </div>
+
         <div class="ticket-card ticket-diamond">
           <div class="t-name">Diamond Ticket</div>
           <div class="t-price">N300k</div>
           <div class="t-date">21st November</div>
         </div>
+
       </div>
     </section>
 
-    <footer class="footer-motto">Your Wealth Journey Starts Here</footer>
+    <footer class="footer-motto">
+      Your Wealth Journey Starts Here
+    </footer>
 
-    <!-- Subtle Helper for Testing Excel File Locally Before Deploying to Vercel -->
-    <div class="organizer-bar">
-      <button type="button" class="organizer-toggle" id="toggleHelper">Organizer Excel Setup &amp; Local Test</button>
-      <div class="organizer-panel" id="helperPanel">
-        <p>Place your Excel file named <strong>guests.xlsx</strong> in the same root folder as this <code>index.html</code> when deploying to Vercel. Columns supported: <strong>Name</strong>, <strong>Phone</strong>, and optional <strong>Ticket</strong>.</p>
-        <div class="organizer-actions">
-          <button type="button" class="btn-mini" id="downloadTemplateBtn">Download Sample guests.xlsx</button>
-          <label class="btn-mini" style="display:inline-block;">
-            Test Local Excel File
-            <input type="file" id="localExcelInput" accept=".xlsx,.xls,.csv" style="display:none;" />
-          </label>
-        </div>
-      </div>
-    </div>
   </main>
 
   <script>
+
     const EXCEL_FILE_PATH = './guests.xlsx';
+
     let guestList = [];
 
     const searchInput = document.getElementById('searchInput');
@@ -827,33 +790,49 @@
     const statusDot = document.getElementById('statusDot');
     const statusText = document.getElementById('statusText');
 
-    // Normalize phone numbers so "0806 682 8303", "+2348066828303", and "8066828303" all match cleanly
+
+    // Normalize phone numbers
     function normalizePhone(val) {
+
       if (val === null || val === undefined) return '';
+
       let digits = String(val).replace(/\D/g, '');
+
       if (digits.startsWith('234') && digits.length >= 13) {
         digits = '0' + digits.slice(3);
       } else if (digits.length === 10 && /^[789]/.test(digits)) {
         digits = '0' + digits;
       }
+
       return digits;
     }
 
-    // Parse rows from any Excel sheet regardless of exact header capitalization
+
+    // Read Excel workbook
     function parseWorkbook(workbook) {
+
       const firstSheetName = workbook.SheetNames[0];
+
       const worksheet = workbook.Sheets[firstSheetName];
+
       const rawRows = XLSX.utils.sheet_to_json(worksheet, { defval: '' });
 
       return rawRows
+
         .map((row) => {
+
           const keys = Object.keys(row);
+
           const nameKey = keys.find((k) => /name|guest|attendee|full/i.test(k)) || keys[0];
+
           const phoneKey = keys.find((k) => /phone|mobile|number|tel|contact/i.test(k)) || keys[1];
+
           const ticketKey = keys.find((k) => /ticket|tier|type|category|pass/i.test(k));
 
           const name = String(row[nameKey] ?? '').trim();
+
           const rawPhone = String(row[phoneKey] ?? '').trim();
+
           const ticket = ticketKey ? String(row[ticketKey] ?? '').trim() : '';
 
           return {
@@ -863,153 +842,215 @@
             cleanPhone: normalizePhone(rawPhone),
             ticket
           };
+
         })
+
         .filter((item) => item.name.length > 0 || item.cleanPhone.length > 0);
+
     }
 
-    // Load guests.xlsx from the root directory on Vercel
+
+    // Load guests.xlsx from Vercel
     async function loadExcelFromServer() {
+
       try {
+
         const response = await fetch(`${EXCEL_FILE_PATH}?v=${Date.now()}`);
+
         if (!response.ok) {
           throw new Error('guests.xlsx not found');
         }
+
         const arrayBuffer = await response.arrayBuffer();
+
         const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
         guestList = parseWorkbook(workbook);
 
         statusDot.className = 'status-dot';
-        statusText.textContent = `Guest directory active • Ready to verify`;
+
+        statusText.textContent = 'Guest directory active • Ready to verify';
+
         searchInput.disabled = false;
+
       } catch (err) {
+
         statusDot.className = 'status-dot error';
-        statusText.textContent = 'Upload guests.xlsx to root folder (or use Organizer Test below)';
+
+        statusText.textContent = 'Guest list could not be loaded. Please try again later.';
+
         searchInput.disabled = false;
+
       }
+
     }
 
+
+    // Prevent HTML injection
     function escapeHTML(str) {
+
       return str.replace(/[&<>"']/g, (m) => ({
+
         '&': '&amp;',
         '<': '&lt;',
         '>': '&gt;',
         '"': '&quot;',
         "'": '&#39;'
+
       }[m]));
+
     }
 
-    // Mask middle digits of phone numbers slightly for privacy while still confirming identity
+
+    // Mask phone number
     function formatDisplayPhone(raw, clean) {
+
       const target = clean || raw;
+
       if (target.length >= 10) {
+
         return `${target.slice(0, 4)} ••• ${target.slice(-4)}`;
+
       }
+
       return target;
+
     }
 
+
+    // Search guest list
     function performSearch() {
+
       const query = searchInput.value.trim();
+
       clearBtn.style.display = query.length > 0 ? 'flex' : 'none';
 
-      // Keep list hidden until guest types a query
       if (query.length < 2) {
+
         resultsArea.innerHTML = '';
+
         return;
+
       }
 
       const queryLower = query.toLowerCase();
+
       const queryDigits = normalizePhone(query);
+
       const isNumericSearch = /^\+?\d[\d\s-]*$/.test(query);
 
       const matches = guestList.filter((guest) => {
+
         if (isNumericSearch && queryDigits.length >= 4) {
+
           return guest.cleanPhone.includes(queryDigits);
+
         }
+
         const nameMatch = guest.nameLower.includes(queryLower);
+
         const phoneMatch = queryDigits.length >= 4 && guest.cleanPhone.includes(queryDigits);
+
         return nameMatch || phoneMatch;
+
       });
 
+
       if (matches.length > 0) {
+
         resultsArea.innerHTML = matches
+
           .slice(0, 8)
+
           .map((guest) => {
+
             const tierBadge = guest.ticket
+
               ? `<span class="guest-tier">${escapeHTML(guest.ticket)}</span>`
+
               : `<span class="guest-tier">Confirmed Guest</span>`;
+
             const phoneDisplay = guest.cleanPhone || guest.rawPhone
+
               ? `<div class="guest-phone">Phone: ${escapeHTML(formatDisplayPhone(guest.rawPhone, guest.cleanPhone))}</div>`
+
               : '';
 
             return `
+
               <div class="guest-card">
+
                 <div class="guest-info">
+
                   <div class="verified-badge">
+
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
                       <polyline points="20 6 9 17 4 12"></polyline>
+
                     </svg>
+
                     Included on Guest List
+
                   </div>
+
                   <div class="guest-name">${escapeHTML(guest.name)}</div>
+
                   ${phoneDisplay}
+
                 </div>
+
                 ${tierBadge}
+
               </div>
+
             `;
+
           })
+
           .join('');
+
       } else {
+
         resultsArea.innerHTML = `
+
           <div class="not-found-card">
+
             <h3>No Matching Record Found</h3>
+
             <p>We couldn't find "<strong>${escapeHTML(query)}</strong>" on the current guest list. Check your spelling/phone digits or contact registration on <strong>0806 682 8303</strong>.</p>
+
           </div>
+
         `;
+
       }
+
     }
 
+
+    // Search when user types
     searchInput.addEventListener('input', performSearch);
 
+
+    // Clear search
     clearBtn.addEventListener('click', () => {
+
       searchInput.value = '';
+
       resultsArea.innerHTML = '';
+
       clearBtn.style.display = 'none';
+
       searchInput.focus();
+
     });
 
-    // Organizer helper controls
-    document.getElementById('toggleHelper').addEventListener('click', () => {
-      const panel = document.getElementById('helperPanel');
-      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-    });
 
-    document.getElementById('localExcelInput').addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (evt) => {
-        const workbook = XLSX.read(evt.target.result, { type: 'array' });
-        guestList = parseWorkbook(workbook);
-        statusDot.className = 'status-dot';
-        statusText.textContent = `Loaded ${guestList.length} guests from ${file.name}`;
-        performSearch();
-      };
-      reader.readAsArrayBuffer(file);
-    });
-
-    document.getElementById('downloadTemplateBtn').addEventListener('click', () => {
-      const sampleData = [
-        { Name: 'Chinedu Okafor', Phone: '08031234567', Ticket: 'Gold Ticket' },
-        { Name: 'Amina Bello', Phone: '08066828303', Ticket: 'Diamond Ticket' },
-        { Name: 'Tunde Adeyemi', Phone: '07019876543', Ticket: 'Regular Ticket' }
-      ];
-      const ws = XLSX.utils.json_to_sheet(sampleData);
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Guests');
-      XLSX.writeFile(wb, 'guests.xlsx');
-    });
-
+    // Load guest Excel file
     loadExcelFromServer();
+
   </script>
+
 </body>
 </html>
